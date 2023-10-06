@@ -10,7 +10,7 @@ git clone https://github.com/AINULX00159358/reverse-proxy.git
 ``` cd reverse-proxy ```
 
 ```
-kubectl create configmap nginx-config --from-file=nginx.conf
+kubectl create configmap nginx-config --from-file=nginx-conf
 ```
 
 ```
