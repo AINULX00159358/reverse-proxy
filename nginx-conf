@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-conf
+data:
+  nginx.conf: |
+    events {
+    }
+    http {
+        server {
+            listen 80;
+            location / {
+                proxy_pass http://nginx-service:80;
+            }
+            location /broker {
+                proxy_pass http://broker-ingress.knative-eventing.svc.cluster.local/default/invoicemgr-event-broker;
+            }
+        }
+    }
